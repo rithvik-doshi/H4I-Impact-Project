@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <p class="text-center">Enter an item to add to your list</p>
+    <div class = "container d-flex align-items-center justify-content-center">
+        <form action="/todo" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.content }}
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock content %}

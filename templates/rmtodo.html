@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <p class="text-center">Enter the number of the item on your list you want to delete</p>
+    <div class = "container d-flex align-items-center justify-content-center">
+        <form action="/rmtodo" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.content }}
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock content %}

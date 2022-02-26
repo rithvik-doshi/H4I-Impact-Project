@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1 class="display-1 text-center">To-Do App</h1>
+
+    <hr>
+
+    <div class="btn-group container d-flex align-items-center justify-content-center">
+        <form method = "POST" action="/todo">
+            <button type="submit" class="btn btn-secondary btn-sm m-2">Add Item</button>
+        </form>
+    
+        <form method = "POST" action="/rmtodo">
+            <button type="submit" class="btn btn-primary btn-sm m-2">Delete Item</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div class = "container d-flex align-items-center justify-content-center">
+        {% for i in todo %}
+        <ul>
+            {{i.id}}. {{ i.content }}
+        </ul>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
